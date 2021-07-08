@@ -6,14 +6,15 @@ import { Link } from 'react-router-dom';
 import Rating from './Rating';
 
 function Product({ product }) {
+    const slug = product.name.replace(/\s+/g, '-').toLowerCase();
     return (
         <Card className="my-3 p-3 rounded">
-            <Link to={`/product/${product._id}`}>
+            <Link to={`/product/${product._id}/${slug}`}>
                 <Card.Img src={product.image} />
             </Link>
 
             <Card.Body>
-                <Link to={`/product/${product._id}`}>
+                <Link to={`/product/${product._id}/${slug}`}>
                     <Card.Title as="div">
                         <strong>{product.name}</strong>
                     </Card.Title>
