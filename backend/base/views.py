@@ -2,18 +2,21 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
+from .models import Product
 from .products import products
+
+from .serializers import ProductSerializer
 
 class ListProducts(APIView):
     def get(self, request):
-        return Response(products)
+        products = Product.objects.all()
+        serializer = ProductSerializer(products, many=True)
+
+        return Response(serializer.data)
 
 class ListSingleProduct(APIView):
     def get(self, request, pk):
-        product = None
-        for i in products:
-            if i['_id'] == pk:
-                product = i
-                break
+        product = Product.objects.get(id=pk)
+        serializer = ProductSerializer(product, many=False)
 
-        return Response(product)
+        return Response(serializer.data)
