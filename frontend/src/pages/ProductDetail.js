@@ -35,7 +35,7 @@ function ProductDetail({ match }) {
                             <h3>{product.name}</h3>
                         </ListGroup.Item>
                         <ListGroup.Item>
-                            <Rating value={product.rating} text={`${product.numReviews} reviews`} color={'#f8e825'} />
+                            <Rating value={product.rating} text={`${product.num_reviews} reviews`} color={'#f8e825'} />
                         </ListGroup.Item>
                         <ListGroup.Item>
                             Description: {product.description}
@@ -55,13 +55,13 @@ function ProductDetail({ match }) {
                                 <Row>
                                     <Col>Status: </Col>
                                     <Col>
-                                        {product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}
+                                        {product.count_in_stock > 0 ? 'In Stock' : 'Out of Stock'}
                                     </Col>
                                 </Row>
                             </ListGroup.Item>
                             <ListGroup.Item>
                                 <Row>
-                                    <Button variant="primary" disabled={product.countInStock == 0}>Add to Cart</Button>
+                                    <Button variant="primary" disabled={product.count_in_stock == 0}>Add to Cart</Button>
                                 </Row>
                             </ListGroup.Item>
                         </ListGroup>
