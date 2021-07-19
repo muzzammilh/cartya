@@ -18,7 +18,7 @@ function Home() {
     }, [dispatch]);
 
     return (
-        <home>
+        <div>
             <h1>Latest Products</h1>
             { 
                 loading ? <Loader /> : 
@@ -31,7 +31,7 @@ function Home() {
                 ))}
                 </Row>
             }
-        </home>
+        </div>
     )
 }
 

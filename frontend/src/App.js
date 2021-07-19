@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
+import Cart from './pages/Cart';
 import Footer from './components/Footer';
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
       <main className="py-3">
         <Container>
           <Route path='/' component={Home} exact />
-          <Route path='/product/:id' component={ProductDetail} />
+          <Route path='/cart/:id?' component={Cart} />
         </Container>
       </main>
       <Footer />
