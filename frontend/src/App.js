@@ -14,6 +14,7 @@ function App() {
       <main className="py-3">
         <Container>
           <Route path='/' component={Home} exact />
+          <Route path='/product/:id' component={ProductDetail} />
           <Route path='/cart/:id?' component={Cart} />
         </Container>
       </main>
